@@ -1,6 +1,6 @@
 {
   "name": "react-google-login-component",
-  "version": "0.9.4",
+  "version": "1.0.0",
   "description": "React Component that lets you instantly login through google platform",
   "main": "dist/react-google-login-component",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kennetpostigo/react-google-login-component.git"
+    "url": "git+https://github.com/ljtijhuis/react-google-login-component.git"
   },
   "keywords": [
     "React",
