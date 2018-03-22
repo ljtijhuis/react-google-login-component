@@ -1,4 +1,6 @@
 import React from 'react';
+import GoogleButton from 'react-google-button'
+
 
 export default class GoogleLogin extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ export default class GoogleLogin extends React.Component {
     const { socialId, scope, fetchBasicProfile } = this.props;
     ((d, s, id, callback) => {
       let js, gs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { 
+      if (d.getElementById(id)) {
         this.setState({
           disabled: false
         });
@@ -65,16 +67,19 @@ export default class GoogleLogin extends React.Component {
     props.disabled = this.state.disabled || props.disabled;
 
     return (
-      <button {...props} onClick={this.clickHandler.bind(this)}>
+      <GoogleButton
+        type={this.props.buttonType || 'light'}
+        onClick={this.clickHandler.bind(this)}
+      >
         {children}
         {buttonText}
-      </button>
+      </GoogleButton>
     )
   }
 }
 
 GoogleLogin.defaultProps = {
-  fetchBasicProfile: false,
+  fetchBasicProfile: true,
   scope: 'profile',
   prompt: '',
 }
